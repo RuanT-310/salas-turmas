@@ -1,6 +1,6 @@
 import { Alert, FlatList, Image, Text, TouchableOpacity, View } from "react-native"
 
-import { styles } from "./styles"
+import { styles } from "../Home/styles"
 import { Button } from "@/components/Button"
 import { Input } from "@/components/Input"
 import { Filter } from "@/components/Filter"
@@ -11,7 +11,7 @@ import { itemsStorage, ItemsStorage } from "@/storage/itemStorage"
 
 const FILTER_STATUS: FilterStatus[] = [FilterStatus.PENDING, FilterStatus.DONE]
 
-export function Home() {
+export function Classes() {
   const [filter, setFilter] = useState(FilterStatus.PENDING)
   const [description, setDescription] = useState("")
   const [items, setItems] = useState<ItemsStorage[]>([])
@@ -88,17 +88,48 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Image source={require('@/assets/logo.svg')} style={styles.logo} />
 
-      <Text style={Styles.t1}>Nova Turma</Text>
-      <Text style={styles.t2}>crie uma turma para adicionar pessoas</Text>
-            
+      <View style={styles.form}
+      >
         <Input 
-          placeholder="Nome da turma" 
+          placeholder="O que você precisa comprar?" 
           onChangeText={setDescription}
           value={description}
         />
-        <Button title="Criar" onPress={handleAdd} />
+        <Button title="Adicionar" onPress={handleAdd} />
+      </View>
+
+      <View style={styles.content}>
+        <View style={styles.header}>
+          {FILTER_STATUS.map((status) => (
+            <Filter
+               key={status}
+               status={status} 
+               isActive={filter === status}
+               onPress={() => setFilter(status)} 
+            />
+          ))}
+
+          <TouchableOpacity style={styles.clearButton} onPress={handleClear}>
+            <Text style={styles.clearText}>Limpar</Text>
+          </TouchableOpacity>
+        </View>
+
+        <FlatList 
+          data={items}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <Item
+              data={item} 
+              onStatus={() => handleToggleItemStatus(item.id)}
+              onRemove={() => handleRemove(item.id)}
+            />
+          )}
+          showsVerticalScrollIndicator={false}
+          ItemSeparatorComponent={() => <View style={styles.separator} />}
+          contentContainerStyle={styles.listContent}
+          ListEmptyComponent={() => <Text style={styles.empty}>Nenhum item aqui.</Text>}
+        />
       </View>
     </View>
   )
