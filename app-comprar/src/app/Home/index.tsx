@@ -23,7 +23,7 @@ export function NewClass() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("@/assets/users.png")} // Ícone de grupo
+        source={require("@/assets/logo.svg")} // Ícone de grupo
         style={styles.icon}
         resizeMode="contain"
       />
