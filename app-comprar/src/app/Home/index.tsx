@@ -88,17 +88,49 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Image source={require('@/assets/logo.svg')} style={styles.logo} />
+      <Image source={require('@/assets/logo.png')} style={styles.logo} />
 
-      <Text style={Styles.t1}>Nova Turma</Text>
-      <Text style={styles.t2}>crie uma turma para adicionar pessoas</Text>
-            
+      <View style={styles.form}
+      >
         <Input 
-          placeholder="Nome da turma" 
+          placeholder="O que você precisa comprar?" 
           onChangeText={setDescription}
           value={description}
         />
-        <Button title="Criar" onPress={handleAdd} />
+        <Button title="Adicionar" onPress={handleAdd} />
+      </View>
+
+      <View style={styles.content}>
+        <View style={styles.header}>
+          {FILTER_STATUS.map((status) => (
+            <Filter
+               key={status}
+               status={status} 
+               isActive={filter === status}
+               onPress={() => setFilter(status)} 
+            />
+          ))}
+
+          <TouchableOpacity style={styles.clearButton} onPress={handleClear}>
+            <Text style={styles.clearText}>Limpar</Text>
+          </TouchableOpacity>
+        </View>
+
+        <FlatList 
+          data={items}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <Item
+              data={item} 
+              onStatus={() => handleToggleItemStatus(item.id)}
+              onRemove={() => handleRemove(item.id)}
+            />
+          )}
+          showsVerticalScrollIndicator={false}
+          ItemSeparatorComponent={() => <View style={styles.separator} />}
+          contentContainerStyle={styles.listContent}
+          ListEmptyComponent={() => <Text style={styles.empty}>Nenhum item aqui.</Text>}
+        />
       </View>
     </View>
   )

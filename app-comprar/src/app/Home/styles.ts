@@ -6,19 +6,16 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#d0d2d8',
     paddingTop: 62,
-  },  t1:{
-    fontFamily:"Roboto",
-    fontSize: 24,
-    backgroundColor: "#ffff",
-  },
-  t2:{
-    fontFamily:"Roboto",
-    fontSize:16,  
-    backgroundColor:"#ffff",  
   },
   logo: {
     height: 34,
     width: 134,
+  },
+  form: {
+    width: '100%',
+    paddingHorizontal: 16,
+    gap: 7,
+    marginTop: 42,
   },
   content: {
     flex: 1,
@@ -42,6 +39,7 @@ export const styles = StyleSheet.create({
     marginLeft: 'auto',
   },
   clearText: {
+    fontSize: 12,
     color: '#828282',
     fontWeight: 600,
   },

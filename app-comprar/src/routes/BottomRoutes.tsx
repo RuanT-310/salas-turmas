@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import { Home } from '@/app/Home'
-import { Product } from '@/app/Product'
+import { Participants } from '@/app/Participants'
 
 const Tab = createBottomTabNavigator()
 
@@ -29,8 +29,8 @@ export function BottomRoutes() {
         }}
       />
       <Tab.Screen
-        name="product"
-        component={Product}
+        name="Participants"
+        component={Participants}
         options={{
           tabBarLabel: 'Produto',
           tabBarIcon: ({ color, size }) => (

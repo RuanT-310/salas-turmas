@@ -11,8 +11,7 @@ type Props = {
 }
 
 export function Participant({ name, onRemove }: Props) {
-  return (
-    <View style={styles.container}>
+  return <View style={styles.container}>
       {/* <MaterialCommunityIcons name="account-circle" size={24} color="#808080" /> */}
       <Text style={styles.name}>{name}</Text>
 
@@ -20,5 +19,4 @@ export function Participant({ name, onRemove }: Props) {
         <Text style={styles.buttonText}>×</Text>
       </TouchableOpacity>
     </View>
-  );
 }

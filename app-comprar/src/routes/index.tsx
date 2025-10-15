@@ -6,7 +6,7 @@ import { DrawerRoutes } from './DrawerRoutes'
 export function Routes() {
   return (
     <NavigationContainer>
-      <DrawerRoutes />
+      <BottomRoutes />
     </NavigationContainer>
   )
 }
