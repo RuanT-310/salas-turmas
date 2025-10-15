@@ -1,72 +1,51 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#d0d2d8',
-    paddingTop: 62,
+    backgroundColor: "#121214", // fundo escuro
+    alignItems: "center",
+    paddingTop: 60,
+    paddingHorizontal: 24,
   },
   logo: {
-    height: 34,
-    width: 134,
+    width: 60,
+    height: 60,
+    marginBottom: 16,
   },
-  form: {
-    width: '100%',
-    paddingHorizontal: 16,
-    gap: 7,
-    marginTop: 42,
+  title: {
+    fontSize: 24,
+    color: "#FFFFFF",
+    fontWeight: "bold",
+    marginBottom: 4,
   },
-  content: {
-    flex: 1,
-    width: '100%',
-    backgroundColor: '#FFFFFF',
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
-    padding: 24,
-    paddingTop: 32,
-    marginTop: 24,
-  },
-  header: {
-    width: '100%',
-    flexDirection: 'row',
-    gap: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E4E6EC',
-    paddingBottom: 12,
-  },
-  clearButton: {
-    marginLeft: 'auto',
-  },
-  clearText: {
-    fontSize: 12,
-    color: '#828282',
-    fontWeight: 600,
-  },
-  separator: {
-    width: "100%",
-    height: 1,
-    backgroundColor: "#EEF0F5",
-    marginVertical: 16,
-  },
-  listContent: {
-    paddingTop: 24,
-    paddingBottom: 62,
-  },
-  empty: {
+  subtitle: {
     fontSize: 14,
-    color: "#808080",
-    textAlign: 'center'
+    color: "#A9A9A9",
+    marginBottom: 32,
   },
-  t1:{
-    fontFamily:"Roboto",
-    fontSize: '24px,'
-    backgroundColor:"#ffff",  
+  listContainer: {
+    width: "100%",
+    gap: 12,
+    flexGrow: 1,
   },
-  t2:{
-    fontFamily:"Roboto",
-    fontSize:16px,  
-    backgroundColor:"#ffff",  
-
+  classCard: {
+    width: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#202024", // cartão escuro
+    paddingVertical: 18,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+  },
+  classIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 12,
+    tintColor: "#00B37E", // verde suave
+  },
+  className: {
+    fontSize: 16,
+    color: "#E1E1E6",
   },
 });
