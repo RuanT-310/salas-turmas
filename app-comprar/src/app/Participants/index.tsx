@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, Alert, Image } from 'react-native';
 import { styles } from './styles'; // Estilos para esta tela
 import { Participant } from '@/components/Participant'; // Importe o componente criado acima
 
@@ -65,6 +65,8 @@ export function Participants() {
 
   return (
     <View style={styles.container}>
+      <Image source={require('@/assets/logo.png')} />
+      
       <Text style={styles.groupName}>Nome da turma</Text>
       <Text style={styles.groupDescription}>adicione a galera e separe os times</Text>
 
