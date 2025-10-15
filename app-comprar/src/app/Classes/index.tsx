@@ -28,11 +28,11 @@ export function Classes() {
   return (
     <View style={styles.container}>
       {/* Logo */}
-      <Image
+      {/* <Image
         source={require("@/assets/logo.png")} // substitua pelo seu caminho correto
         style={styles.logo}
         resizeMode="contain"
-      />
+      /> */}
 
       {/* Título */}
       <Text style={styles.title}>Turmas</Text>
@@ -44,11 +44,11 @@ export function Classes() {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.classCard}>
-            <Image
+            {/* <Image
               source={require("@/assets/users.png")} // ícone de grupo
               style={styles.classIcon}
               resizeMode="contain"
-            />
+            /> */}
             <Text style={styles.className}>{item.name}</Text>
           </TouchableOpacity>
         )}

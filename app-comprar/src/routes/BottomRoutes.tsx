@@ -3,6 +3,7 @@ import { MaterialIcons } from '@expo/vector-icons'
 
 import { Home } from '@/app/Home'
 import { Participants } from '@/app/Participants'
+import { Classes } from '@/app/Classes'
 
 const Tab = createBottomTabNavigator()
 
@@ -33,6 +34,16 @@ export function BottomRoutes() {
         component={Participants}
         options={{
           tabBarLabel: 'Produto',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="add-circle" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Turmas"
+        component={Classes}
+        options={{
+          tabBarLabel: 'Turmas',
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="add-circle" color={color} size={size} />
           ),

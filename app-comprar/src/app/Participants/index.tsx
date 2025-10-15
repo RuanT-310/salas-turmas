@@ -65,7 +65,7 @@ export function Participants() {
 
   return (
     <View style={styles.container}>
-      <Image source={require('@/assets/logo.png')} />
+      <Image source={require('@/assets/logo.png')} style={{width: 100, height: 100}}/>
       
       <Text style={styles.groupName}>Nome da turma</Text>
       <Text style={styles.groupDescription}>adicione a galera e separe os times</Text>
